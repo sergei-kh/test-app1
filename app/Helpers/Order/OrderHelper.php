@@ -35,4 +35,21 @@ class OrderHelper
         }
         return $output;
     }
+
+    /**
+     * The method returns the total amount of the order
+     *
+     * @param Collection $orders
+     * @return int
+     */
+    public static function getTotalPriceProducts(Collection $orders): int
+    {
+        $total = 0;
+        foreach ($orders as $order) {
+            foreach ($order->products as $product) {
+                $total += $product->pivot->cost * $product->pivot->count;
+            }
+        }
+        return round($total);
+    }
 }
