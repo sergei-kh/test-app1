@@ -10,9 +10,11 @@ import OrderCreate from "./class/OrderCreate";
 
 window.globalOptions = new GlobalOptions();
 
-const modal = new Modal(document.getElementById('modal_create_order'), {
-    keyboard: false
-});
+let modalEl = document.getElementById('modal_create_order');
+let modal = null;
+if (modalEl !== null) {
+    modal = new Modal(document.getElementById('modal_create_order'), {keyboard: false});
+}
 
 const productList = new ProductList();
 productList.init();

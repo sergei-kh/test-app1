@@ -8,11 +8,13 @@ export default class OrderCreate {
     }
 
     init() {
-        this.btn.addEventListener('click',  () => {
-            this.formOrder.reset();
-            this.formOrder.enableFormCreate();
-            this.caption.textContent = 'Новый заказ';
-            this.modal.show();
-        });
+        if (this.btn !== null) {
+            this.btn.addEventListener('click',  () => {
+                this.formOrder.reset();
+                this.formOrder.enableFormCreate();
+                this.caption.textContent = 'Новый заказ';
+                this.modal.show();
+            });
+        }
     }
 }

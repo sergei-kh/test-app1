@@ -16,14 +16,16 @@ export default class ProductList {
     }
 
     init() {
-        let items = this.box.children;
-        for (let i = 0; i < items.length; i++) {
-            let checkbox = items[i].children[0];
-            if (checkbox.dataset.qty < 1) {
-                items[i].classList.add('list-group-item_disabled');
+        if (this.box !== null) {
+            let items = this.box.children;
+            for (let i = 0; i < items.length; i++) {
+                let checkbox = items[i].children[0];
+                if (checkbox.dataset.qty < 1) {
+                    items[i].classList.add('list-group-item_disabled');
+                }
+                checkbox.addEventListener('change', this.onChange.bind(this));
+                this.inputs.push(checkbox);
             }
-            checkbox.addEventListener('change', this.onChange.bind(this));
-            this.inputs.push(checkbox);
         }
     }
 

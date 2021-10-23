@@ -9,9 +9,11 @@ export default class FormOrder {
 
     constructor(productList) {
         this.form = document.getElementById('order_form');
-        this.btn = this.form.querySelector('.btn-primary');
-        this.productList = productList;
-        this.method = 'post';
+        if (this.form !== null) {
+            this.btn = this.form.querySelector('.btn-primary');
+            this.productList = productList;
+            this.method = 'post';
+        }
     }
 
     init() {
