@@ -15,9 +15,4 @@ class PageController extends Controller
         $orders = Order::orderBy('id', 'desc')->paginate(10);
         return view('page.orders', compact('products', 'users', 'orders'));
     }
-
-    public function report()
-    {
-        return view('page.report');
-    }
 }

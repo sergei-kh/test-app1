@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,8 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('main');
-Route::get('/report', [PageController::class, 'report'])->name('report');
 
 Route::get('/order/product-info/{id}', [OrderController::class, 'info']);
 Route::resource('order', OrderController::class)->only(['store', 'show', 'update']);
-
+Route::resource('report', ReportController::class)->only(['index']);
 Route::resource('product', ProductController::class)->only(['index']);

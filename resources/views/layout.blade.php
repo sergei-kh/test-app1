@@ -14,8 +14,8 @@
                 <nav class="list-group">
                     <a href="{{route('main')}}"
                        class="list-group-item list-group-item-action @if(Route::is('main')) active @endif">Заказы</a>
-                    <a href="{{route('report')}}"
-                       class="list-group-item list-group-item-action @if(Route::is('report')) active @endif">Отчёты</a>
+                    <a href="{{route('report.index')}}"
+                       class="list-group-item list-group-item-action @if(Route::is('report.index')) active @endif">Отчёты</a>
                 </nav>
             </div>
             <main class="col-md-8">
