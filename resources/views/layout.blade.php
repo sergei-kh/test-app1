@@ -6,6 +6,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
     <meta name="csrf-token" content="{{csrf_token()}}">
+    <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
     <div class="container mt-5">
