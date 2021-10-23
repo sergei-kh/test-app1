@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class, 'index'])->name('main');
+Route::get('/report', [PageController::class, 'report'])->name('report');
+
+Route::get('/order/product-info/{id}', [OrderController::class, 'info']);
+Route::resource('order', OrderController::class)->only(['store', 'show', 'update']);
+
+Route::resource('product', ProductController::class)->only(['index']);

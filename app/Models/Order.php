@@ -30,7 +30,7 @@ class Order extends Model
      *
      * @var array
      */
-    protected $fillable = ['customer', 'phone', 'user_id', 'type', 'status'];
+    protected $fillable = ['customer', 'phone', 'user_id', 'type', 'status', 'completed_at'];
 
     use HasFactory;
     use Saving;
@@ -52,7 +52,9 @@ class Order extends Model
      */
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class, 'order_items');
+        return $this
+            ->belongsToMany(Product::class, 'order_items')
+            ->withPivot('count', 'discount', 'cost');
     }
 
     /**

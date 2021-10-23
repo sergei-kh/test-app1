@@ -1,0 +1,24 @@
+.product-item {
+    &__input {
+        max-width: 120px;
+    }
+    &__title {
+        width: 100px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    &__small {
+        font-size: 14px;
+        margin-right: 5px;
+    }
+    &__count {
+        display: block;
+        font-weight: 500;
+        color: #7e7e7e;
+    }
+    &__close {
+        right: 10px;
+        top: 10px;
+    }
+}
