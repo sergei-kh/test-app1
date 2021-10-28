@@ -17,8 +17,8 @@
                         <input type="tel" name="phone" class="form-control user_phone" id="phone" required>
                     </div>
                     <div class="mb-3">
-                        <label for="manager" class="form-label">Менеджер</label>
-                        <select name="user_id" class="form-select" id="manager">
+                        <label for="user_id" class="form-label">Менеджер</label>
+                        <select name="user_id" class="form-select" id="user_id">
                             @foreach($users as $user)
                                 @if ($loop->first)
                                     <option selected value="{{$user->id}}">{{$user->name}}</option>
